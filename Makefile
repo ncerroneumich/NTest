@@ -1,6 +1,7 @@
 CXX = g++
 CXXFLAGS = -g -Ilibsrc -std=c++11
 dyvar = LD_LIBRARY_PATH=./ # For dynamic compilation on linux
+exe = main.cpp
 
 .PHONY: all
 all: app-dynamic app-static
@@ -21,10 +22,10 @@ lib/libntest.a: libobj/static/NTest.o
 	mkdir -p $(dir $@)
 	ar rcs $@ $<
 
-app-dynamic: main.cpp lib/libntest.so
+app-dynamic: $(exe) lib/libntest.so
 	$(CXX) $(CXXFLAGS) -o $@ $< -Llib -l:libntest.so
 
-app-static: main.cpp lib/libntest.a
+app-static: $(exe) lib/libntest.a
 	$(CXX) $(CXXFLAGS) -o $@ $< -Llib -l:libntest.a
 
 .PHONY: run-static
