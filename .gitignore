@@ -1,4 +1,6 @@
-a.out
-Makefile
 main.cpp
+/libobj
+/lib
 /.vscode
+app-dynamic
+app-static

@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include "NTest.h"
-
 
 NTest::NTest(const std::string& name) : name_(name) {}
 
