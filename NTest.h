@@ -19,17 +19,27 @@ public:
 
     void AssertTrue(bool condition);
 
+    void AssertFalse(bool condition);
+
     template <typename T>
     void AssertGreaterThan(const T& expected, const T& actual);
 
     template <typename T>
+    void AssertGreaterThanOrEqual(const T& expected, const T& actual);
+
+    template <typename T>
     void AssertLessThan(const T& expected, const T& actual);
+
+    template <typename T>
+    void AssertLessThanOrEqual(const T& expected, const T& actual);
 
     template <typename T>
     void AssertEqual(const T& expected, const T& actual);
 
     template <typename T>
     void AssertNotEqual(const T& expected, const T& actual);
+
+    void AssertNear(const double& expected, const double& actual, const double& tolerance);
 
     void PrintSummary();
 };
