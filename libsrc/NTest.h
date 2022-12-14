@@ -10,9 +10,9 @@
 //        suite. 
 class NTest {
 private:
-    std::string name_;
-    int total_tests_ = 0;
-    int fail_count_ = 0;
+    std::string name;
+    int total_tests = 0;
+    int fail_count = 0;
 
 public:
     NTest(const std::string& name);
